@@ -79,6 +79,11 @@ namespace launcher
                     thr.Join();
                     StepText.Location = new Point(12, 9);
                     File.Delete(Launcher.LauncherDataPath + "\\other.zip");
+                    versions.assetsv = client.DownloadString("http://pearx.ru/ctb/client/assets.v");
+                    versions.libsv = client.DownloadString("http://pearx.ru/ctb/client/libs.v");
+                    versions.forgev = client.DownloadString("http://pearx.ru/ctb/client/forge.v");
+                    versions.gamev = client.DownloadString("http://pearx.ru/ctb/client/game.v");
+                    versions.otherv = client.DownloadString("http://pearx.ru/ctb/client/other.v");
                     StepText.Text = "Готово";
                     this.Close();
                     Program.l.CheckGame();

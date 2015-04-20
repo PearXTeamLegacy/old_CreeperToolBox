@@ -41,6 +41,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.FullScreenBox = new System.Windows.Forms.CheckBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MemoryBar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,11 +162,21 @@
             this.FullScreenBox.UseVisualStyleBackColor = false;
             this.FullScreenBox.CheckedChanged += new System.EventHandler(this.FullScreenBox_CheckedChanged);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(9, 169);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(13, 65);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "1\r\n2\r\n3\r\n4\r\n5";
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(456, 291);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.FullScreenBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -205,5 +216,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.CheckBox FullScreenBox;
+        private System.Windows.Forms.Label label9;
     }
 }

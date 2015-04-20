@@ -45,10 +45,7 @@ namespace launcher
                 WebClient ads = new WebClient();
                 LauncherAds.Text = ads.DownloadString("http://pearx.ru/ctb/adtext");
             }
-            catch
-            {
-
-            }
+            catch { }
             if (!Directory.Exists(LauncherDataPath)) Directory.CreateDirectory(LauncherDataPath);
             if (!Directory.Exists(appdata + "\\" + foldername)) Directory.CreateDirectory(appdata + "\\" + foldername);
             if (!Directory.Exists(appdata + "\\" + foldername + "\\bin")) Directory.CreateDirectory(appdata + "\\" + foldername + "\\bin");
@@ -61,9 +58,16 @@ namespace launcher
                 Memory = Convert.ToInt32(s1[2]);
                 FullScreen = Convert.ToBoolean(s1[3]);
             }
-            catch
+            catch { }
+            if (File.Exists(LauncherDataPath + "\\version"))
             {
-
+                string[] s1;
+                s1 = File.ReadAllLines(LauncherDataPath + "\\versions");
+                versions.assetsv = s1[0];
+                versions.libsv = s1[1];
+                versions.forgev = s1[2];
+                versions.gamev = s1[3];
+                versions.otherv = s1[4];
             }
             UserNameBox.Text = NickName;
             

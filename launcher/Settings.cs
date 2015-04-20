@@ -102,6 +102,7 @@ namespace launcher
             {
                 MemoryBar.Value = 7;
             }
+            label9.Text = "Версия ресурсов - " + versions.assetsv + "\nВерсия ядра игры - " + versions.gamev + "\nВерсия библиотек - " + versions.libsv + "\nВерсия MinecraftForge - " + versions.forgev + "\nВыпуск прочих файлов - " + versions.otherv;
         }
 
         private void FullScreenBox_CheckedChanged(object sender, EventArgs e)
