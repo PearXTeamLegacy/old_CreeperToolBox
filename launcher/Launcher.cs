@@ -59,7 +59,7 @@ namespace launcher
                 FullScreen = Convert.ToBoolean(s1[3]);
             }
             catch { }
-            if (File.Exists(LauncherDataPath + "\\version"))
+            if (File.Exists(LauncherDataPath + "\\versions"))
             {
                 string[] s1;
                 s1 = File.ReadAllLines(LauncherDataPath + "\\versions");
@@ -88,6 +88,13 @@ namespace launcher
                 Memory.ToString(),
                 FullScreen.ToString()
             });
+            File.WriteAllLines(LauncherDataPath + "\\versions", new string[] { 
+                versions.assetsv,
+                versions.libsv,
+                versions.forgev,
+                versions.gamev,
+                versions.otherv,
+            });
         }
 
         private void UserNameBox_TextChanged(object sender, EventArgs e)
@@ -97,15 +104,43 @@ namespace launcher
 
         private void StartGameBtn_Click(object sender, EventArgs e)
         {
-            if (NickName != null && NickName != "" && GameChecked == true)
+            if (NickName != null && NickName != "")
             {
-                LaunchGame lg = new LaunchGame();
-                lg.StartGame();
+                if (GameChecked == true)
+                {
+                    WebClient client = new WebClient();
+                    string forgea = client.DownloadString("http://pearx.ru/ctb/client/forge.v");
+                    if (forgea != versions.forgev)
+                    {
+                        DialogResult result = MessageBox.Show("Обновить?", "Доступно обновление MinecraftForge", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
+                        {
+                            Downloading d = new Downloading();
+                            d.type = 2;
+                            d.Show();
+                        }
+                        else
+                        {
+                            LaunchGame lg = new LaunchGame();
+                            lg.StartGame();
+                        }
+                    }
+                    else
+                    {
+                        LaunchGame lg = new LaunchGame();
+                        lg.StartGame();
+                    }
+                }
+                else
+                {
+                    Downloading d = new Downloading();
+                    d.type = 1;
+                    d.Show();
+                }
             }
             else
             {
-                Downloading d = new Downloading();
-                d.Show();
+                MessageBox.Show("Введите имя игрока", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

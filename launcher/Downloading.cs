@@ -17,7 +17,7 @@ namespace launcher
     {
         WebClient client = new WebClient();
         int step = 0;
-        public static int type = 1;
+        public int type;
         public Downloading()
         {
             InitializeComponent();
@@ -51,7 +51,7 @@ namespace launcher
                 else if (step == 1)
                 {
                     step++;
-                    StepText.Text = "Шаг 4/7: Скачивание загрузчика для модов";
+                    StepText.Text = "Шаг 4/7: Скачивание MinecraftForge";
                     DownloadBar.Visible = true;
                     client.DownloadFileAsync(new Uri("http://pearx.ru/ctb/client/forge.jar"), Launcher.appdata + "\\" + Launcher.foldername + "\\bin\\forge.jar");
                 }
@@ -89,16 +89,13 @@ namespace launcher
                     Program.l.CheckGame();
                 }
             }
-            else if (type == 2)
+            else if(type == 2)
             {
-                DownloadBar.Visible = false;
-                StepText.Text = "Шаг 2/7: Распаковка ресурсов...";
-                StepText.Location = new Point(69, 27);
-                Thread thr = new Thread(ExtractZip);
-                thr.Start();
-                thr.Join();
-                StepText.Location = new Point(12, 9);
-                File.Delete(Launcher.LauncherDataPath + "\\assets.zip");
+                versions.forgev = client.DownloadString("http://pearx.ru/ctb/client/forge.v");
+                StepText.Text = "Готово";
+                this.Close();
+                Program.l.CheckGame();
+                type = 1;
             }
         }
 
@@ -124,11 +121,10 @@ namespace launcher
             }
             else if (type == 2)
             {
-                if (File.Exists(Launcher.LauncherDataPath + "\\assets.zip")) File.Delete(Launcher.LauncherDataPath + "\\assets.zip");
-                if (Directory.Exists(Launcher.appdata + "\\" + Launcher.foldername + "\\assets")) Directory.Delete(Launcher.appdata + "\\" + Launcher.foldername + "\\assets", true);
-                StepText.Text = "Шаг 1/2: Обновление ресурсов";
-                client.DownloadFileAsync(new Uri("http://pearx.ru/ctb/client/assets.zip"), Launcher.LauncherDataPath + "\\assets.zip");
                 UpdateTimer.Stop();
+                if (File.Exists(Launcher.appdata + "\\" + Launcher.foldername + "\\bin\\forge.jar")) File.Delete(Launcher.appdata + "\\" + Launcher.foldername + "\\bin\\forge.jar");
+                StepText.Text = "Шаг 1/1: Обновление MinecraftForge";
+                client.DownloadFileAsync(new Uri("http://pearx.ru/ctb/client/forge.jar"), Launcher.appdata + "\\" + Launcher.foldername + "\\bin\\forge.jar");
             }
         }
 
