@@ -14,6 +14,7 @@ namespace launcher
     {
         string login = Launcher.NickName, pathtogame, pathtolibs;
         string javapath;
+        bool outStartInfo = true;
         public void StartGame()
         {
             pathtogame = Launcher.appdata + "\\" + Launcher.foldername + "\\";
@@ -72,10 +73,22 @@ namespace launcher
             sb.Append("--userType legacy ");
             sb.Append("--tweakClass cpw.mods.fml.common.launcher.FMLTweaker ");
 
-            
+
             ProcessStartInfo mcStartInfo = new ProcessStartInfo(javapath, sb.ToString());
-            mc.StartInfo = mcStartInfo;
+            ProcessStartInfo ownmcStartInfo = new ProcessStartInfo(javapath, Launcher.ownString);
+            if (Launcher.ownStartString == true)
+            {
+                mc.StartInfo = ownmcStartInfo;
+            }
+            else
+            {
+                mc.StartInfo = mcStartInfo;
+            }
             Program.l.Hide();
+            if (outStartInfo == true)
+            {
+                Clipboard.SetText(sb.ToString());
+            }
             try
             {
                 mc.Start();

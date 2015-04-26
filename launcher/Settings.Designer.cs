@@ -42,6 +42,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.FullScreenBox = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.ownStartStringBox = new System.Windows.Forms.CheckBox();
+            this.ownStartBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.MemoryBar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,11 +173,34 @@
             this.label9.TabIndex = 12;
             this.label9.Text = "1\r\n2\r\n3\r\n4\r\n5";
             // 
+            // ownStartStringBox
+            // 
+            this.ownStartStringBox.AutoSize = true;
+            this.ownStartStringBox.Location = new System.Drawing.Point(12, 237);
+            this.ownStartStringBox.Name = "ownStartStringBox";
+            this.ownStartStringBox.Size = new System.Drawing.Size(209, 17);
+            this.ownStartStringBox.TabIndex = 13;
+            this.ownStartStringBox.Text = "Использовать свою строку запуска";
+            this.ownStartStringBox.UseVisualStyleBackColor = true;
+            this.ownStartStringBox.CheckedChanged += new System.EventHandler(this.ownStartStringBox_CheckedChanged);
+            this.ownStartStringBox.Click += new System.EventHandler(this.ownStartStringBox_Click);
+            // 
+            // ownStartBox
+            // 
+            this.ownStartBox.Enabled = false;
+            this.ownStartBox.Location = new System.Drawing.Point(12, 260);
+            this.ownStartBox.Name = "ownStartBox";
+            this.ownStartBox.Size = new System.Drawing.Size(432, 20);
+            this.ownStartBox.TabIndex = 14;
+            this.ownStartBox.TextChanged += new System.EventHandler(this.ownStartBox_TextChanged);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 291);
+            this.ClientSize = new System.Drawing.Size(449, 284);
+            this.Controls.Add(this.ownStartBox);
+            this.Controls.Add(this.ownStartStringBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.FullScreenBox);
             this.Controls.Add(this.label8);
@@ -217,5 +242,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.CheckBox FullScreenBox;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.CheckBox ownStartStringBox;
+        private System.Windows.Forms.TextBox ownStartBox;
     }
 }

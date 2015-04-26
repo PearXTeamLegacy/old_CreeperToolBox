@@ -103,6 +103,12 @@ namespace launcher
                 MemoryBar.Value = 7;
             }
             label9.Text = "Версия ресурсов - " + versions.assetsv + "\nВерсия ядра игры - " + versions.gamev + "\nВерсия библиотек - " + versions.libsv + "\nВерсия MinecraftForge - " + versions.forgev + "\nВыпуск прочих файлов - " + versions.otherv;
+            if (Launcher.ownStartString == true)
+            {
+                ownStartStringBox.Checked = true;
+                ownStartBox.Enabled = true;
+            }
+            ownStartBox.Text = Launcher.ownString;
         }
 
         private void FullScreenBox_CheckedChanged(object sender, EventArgs e)
@@ -115,6 +121,38 @@ namespace launcher
             {
                 Launcher.FullScreen = false;
             }
+        }
+
+        private void ownStartStringBox_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ownStartStringBox_Click(object sender, EventArgs e)
+        {
+            if (ownStartStringBox.Checked == true)
+            {
+                DialogResult result = MessageBox.Show("Используйте это только тогда, когда вы знаете, что делаете!", "Вы уверены?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.No)
+                {
+                    ownStartStringBox.Checked = false;
+                }
+                else
+                {
+                    ownStartBox.Enabled = true;
+                    Launcher.ownStartString = true;
+                }
+            }
+            else
+            {
+                ownStartBox.Enabled = false;
+                Launcher.ownStartString = false;
+            }
+        }
+
+        private void ownStartBox_TextChanged(object sender, EventArgs e)
+        {
+            Launcher.ownString = ownStartBox.Text;
         }
     }
 }

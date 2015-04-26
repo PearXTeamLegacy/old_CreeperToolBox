@@ -23,6 +23,8 @@ namespace launcher
         public static string NickName = "Player";
         public static int Memory = 1024;
         public static bool FullScreen = false;
+        public static bool ownStartString = false;
+        public static string ownString;
         bool GameChecked;
 
 
@@ -57,6 +59,8 @@ namespace launcher
                 NickName = s1[1];
                 Memory = Convert.ToInt32(s1[2]);
                 FullScreen = Convert.ToBoolean(s1[3]);
+                ownStartString = Convert.ToBoolean(s1[4]);
+                ownString = s1[5];
             }
             catch { }
             if (File.Exists(LauncherDataPath + "\\versions"))
@@ -86,7 +90,9 @@ namespace launcher
                 WallpaperPath,
                 NickName,
                 Memory.ToString(),
-                FullScreen.ToString()
+                FullScreen.ToString(),
+                ownStartString.ToString(),
+                ownString
             });
             File.WriteAllLines(LauncherDataPath + "\\versions", new string[] { 
                 versions.assetsv,
