@@ -64,8 +64,8 @@ namespace launcher
                 sb.Append("--fullscreen true ");
             }
             sb.Append("--version 1.7.10 ");
-            sb.Append("--gameDir " + Launcher.appdata + "\\" + Launcher.foldername + " ");
-            sb.Append("--assetsDir " + Launcher.appdata + "\\" + Launcher.foldername + "\\assets ");
+            sb.Append("--gameDir \"" + Launcher.appdata + "\\" + Launcher.foldername + "\" ");
+            sb.Append("--assetsDir \"" + Launcher.appdata + "\\" + Launcher.foldername + "\\assets\" ");
             sb.Append("--assetIndex game ");
             sb.Append("--uuid 123 ");
             sb.Append("--accessToken  123 ");
