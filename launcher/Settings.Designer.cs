@@ -44,6 +44,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.ownStartStringBox = new System.Windows.Forms.CheckBox();
             this.ownStartBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MemoryBar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -167,7 +169,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 169);
+            this.label9.Location = new System.Drawing.Point(12, 210);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(13, 65);
             this.label9.TabIndex = 12;
@@ -176,7 +178,7 @@
             // ownStartStringBox
             // 
             this.ownStartStringBox.AutoSize = true;
-            this.ownStartStringBox.Location = new System.Drawing.Point(12, 237);
+            this.ownStartStringBox.Location = new System.Drawing.Point(163, 149);
             this.ownStartStringBox.Name = "ownStartStringBox";
             this.ownStartStringBox.Size = new System.Drawing.Size(209, 17);
             this.ownStartStringBox.TabIndex = 13;
@@ -188,17 +190,37 @@
             // ownStartBox
             // 
             this.ownStartBox.Enabled = false;
-            this.ownStartBox.Location = new System.Drawing.Point(12, 260);
+            this.ownStartBox.Location = new System.Drawing.Point(12, 187);
             this.ownStartBox.Name = "ownStartBox";
             this.ownStartBox.Size = new System.Drawing.Size(432, 20);
             this.ownStartBox.TabIndex = 14;
             this.ownStartBox.TextChanged += new System.EventHandler(this.ownStartBox_TextChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 82);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(188, 13);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Память для запуска (в мегабайтах)";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(9, 169);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(114, 13);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Своя строка запуска";
             // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(449, 284);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.ownStartBox);
             this.Controls.Add(this.ownStartStringBox);
             this.Controls.Add(this.label9);
@@ -244,5 +266,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox ownStartStringBox;
         private System.Windows.Forms.TextBox ownStartBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }
