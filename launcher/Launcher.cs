@@ -182,8 +182,10 @@ namespace launcher
                 {
                     MessageBox.Show(ex.Message, "Произошла ошибка");
                 }
-            if (!Directory.Exists(appdata + "\\" + foldername)) Directory.CreateDirectory(appdata + "\\" + foldername);
-            if (!Directory.Exists(appdata + "\\" + foldername + "\\bin")) Directory.CreateDirectory(appdata + "\\" + foldername + "\\bin");
+                if (!Directory.Exists(appdata + "\\" + foldername)) Directory.CreateDirectory(appdata + "\\" + foldername);
+                if (!Directory.Exists(appdata + "\\" + foldername + "\\bin")) Directory.CreateDirectory(appdata + "\\" + foldername + "\\bin");
+                CheckGame();
+                versions.assetsv = null; versions.gamev = null; versions.libsv = null; versions.forgev = null; versions.otherv = null;
             }
         }
 

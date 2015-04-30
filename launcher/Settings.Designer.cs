@@ -46,12 +46,13 @@
             this.ownStartBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MemoryBar)).BeginInit();
             this.SuspendLayout();
             // 
             // ChangeWallpaperBtn
             // 
-            this.ChangeWallpaperBtn.Location = new System.Drawing.Point(12, 12);
+            this.ChangeWallpaperBtn.Location = new System.Drawing.Point(12, 39);
             this.ChangeWallpaperBtn.Name = "ChangeWallpaperBtn";
             this.ChangeWallpaperBtn.Size = new System.Drawing.Size(112, 40);
             this.ChangeWallpaperBtn.TabIndex = 0;
@@ -65,7 +66,7 @@
             // 
             // ResetWallpaperBtn
             // 
-            this.ResetWallpaperBtn.Location = new System.Drawing.Point(130, 12);
+            this.ResetWallpaperBtn.Location = new System.Drawing.Point(130, 39);
             this.ResetWallpaperBtn.Name = "ResetWallpaperBtn";
             this.ResetWallpaperBtn.Size = new System.Drawing.Size(62, 27);
             this.ResetWallpaperBtn.TabIndex = 1;
@@ -214,11 +215,21 @@
             this.label11.TabIndex = 16;
             this.label11.Text = "Своя строка запуска";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(12, 9);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 13);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "version";
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(449, 284);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.ownStartBox);
@@ -268,5 +279,6 @@
         private System.Windows.Forms.TextBox ownStartBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
     }
 }
