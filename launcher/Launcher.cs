@@ -251,5 +251,10 @@ namespace launcher
                 }
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/mrAppleXZ/CreeperToolBox/issues/new");
+        }
     }
 }

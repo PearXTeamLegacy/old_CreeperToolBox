@@ -52,6 +52,7 @@
             // 
             // ChangeWallpaperBtn
             // 
+            this.ChangeWallpaperBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ChangeWallpaperBtn.Location = new System.Drawing.Point(12, 39);
             this.ChangeWallpaperBtn.Name = "ChangeWallpaperBtn";
             this.ChangeWallpaperBtn.Size = new System.Drawing.Size(112, 40);
@@ -66,6 +67,7 @@
             // 
             // ResetWallpaperBtn
             // 
+            this.ResetWallpaperBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ResetWallpaperBtn.Location = new System.Drawing.Point(130, 39);
             this.ResetWallpaperBtn.Name = "ResetWallpaperBtn";
             this.ResetWallpaperBtn.Size = new System.Drawing.Size(62, 27);
@@ -159,6 +161,7 @@
             // 
             this.FullScreenBox.AutoSize = true;
             this.FullScreenBox.BackColor = System.Drawing.SystemColors.Control;
+            this.FullScreenBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FullScreenBox.Location = new System.Drawing.Point(12, 149);
             this.FullScreenBox.Name = "FullScreenBox";
             this.FullScreenBox.Size = new System.Drawing.Size(145, 17);
@@ -179,6 +182,7 @@
             // ownStartStringBox
             // 
             this.ownStartStringBox.AutoSize = true;
+            this.ownStartStringBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ownStartStringBox.Location = new System.Drawing.Point(163, 149);
             this.ownStartStringBox.Name = "ownStartStringBox";
             this.ownStartStringBox.Size = new System.Drawing.Size(209, 17);

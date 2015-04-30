@@ -37,10 +37,12 @@ namespace launcher
             this.ClearDirBtn = new System.Windows.Forms.Button();
             this.LauncherAds = new System.Windows.Forms.Label();
             this.updt = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // SettingsBtn
             // 
+            this.SettingsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SettingsBtn.Image = global::launcher.Properties.Resources.settings;
             this.SettingsBtn.Location = new System.Drawing.Point(681, 12);
             this.SettingsBtn.Name = "SettingsBtn";
@@ -61,6 +63,7 @@ namespace launcher
             // 
             // StartGameBtn
             // 
+            this.StartGameBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.StartGameBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.StartGameBtn.Location = new System.Drawing.Point(277, 169);
             this.StartGameBtn.Name = "StartGameBtn";
@@ -72,6 +75,7 @@ namespace launcher
             // 
             // OpenGameFolder
             // 
+            this.OpenGameFolder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.OpenGameFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OpenGameFolder.Location = new System.Drawing.Point(277, 217);
             this.OpenGameFolder.Name = "OpenGameFolder";
@@ -83,6 +87,7 @@ namespace launcher
             // 
             // ClearDirBtn
             // 
+            this.ClearDirBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClearDirBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ClearDirBtn.Location = new System.Drawing.Point(277, 269);
             this.ClearDirBtn.Name = "ClearDirBtn";
@@ -109,6 +114,18 @@ namespace launcher
             this.updt.Interval = 1;
             this.updt.Tick += new System.EventHandler(this.updt_Tick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Location = new System.Drawing.Point(12, 405);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(346, 52);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "ВНИМАНИЕ!\r\nЭто Alpha-версия Creeper ToolBox. В этой версии могут быть баги. \r\nО в" +
+    "сех найденных багах пишите разработчику на GitHub!\r\n(нажмите чтобы открыть)";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Launcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -116,6 +133,7 @@ namespace launcher
             this.BackgroundImage = global::launcher.Properties.Resources.wallpaper;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(743, 466);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.LauncherAds);
             this.Controls.Add(this.ClearDirBtn);
             this.Controls.Add(this.OpenGameFolder);
@@ -143,6 +161,7 @@ namespace launcher
         private System.Windows.Forms.Button ClearDirBtn;
         private System.Windows.Forms.Label LauncherAds;
         private System.Windows.Forms.Timer updt;
+        private System.Windows.Forms.Label label1;
     }
 }
 
