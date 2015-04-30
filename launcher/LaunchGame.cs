@@ -14,7 +14,7 @@ namespace launcher
     {
         string login = Launcher.NickName, pathtogame, pathtolibs;
         string javapath;
-        bool outStartInfo = true;
+        bool outStartInfo = false;
         public void StartGame()
         {
             pathtogame = Launcher.appdata + "\\" + Launcher.foldername + "\\";
