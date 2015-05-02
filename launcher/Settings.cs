@@ -42,7 +42,6 @@ namespace launcher
             MemoryBar.Value = (Launcher.Memory - 512) / 512;
             label9.Text = "Версия ресурсов - " + versions.assetsv + "\nВерсия ядра игры - " + versions.gamev + "\nВерсия библиотек - " + versions.libsv + "\nВерсия MinecraftForge - " + versions.forgev + "\nВыпуск прочих файлов - " + versions.otherv;
             label12.Text = "Creeper ToolBox " + versions.v;
-            System.IO.File.Delete("lol");
             if (Launcher.ownStartString == true)
             {
                 ownStartStringBox.Checked = true;
