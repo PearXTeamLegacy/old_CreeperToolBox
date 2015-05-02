@@ -12,13 +12,11 @@ namespace launcher
 {
     class LaunchGame
     {
-        string login = Launcher.NickName, pathtogame, pathtolibs;
-        string javapath;
-        bool outStartInfo = false;
+        string login = Launcher.NickName, pathtogame, javapath;
+        bool outStartInfo = false; //Копирует в буфер строку запуска, ТОЛЬКО ДЛЯ ОТЛАДКИ!
         public void StartGame()
         {
             pathtogame = Launcher.appdata + "\\" + Launcher.foldername + "\\";
-            pathtolibs = pathtogame + "libraries\\";
             if (!Directory.Exists(pathtogame)) Directory.CreateDirectory(pathtogame);
             string options = Launcher.appdata + "\\" + Launcher.foldername + "\\options.txt";
             if (!File.Exists(options)) File.WriteAllText(options, "lang:ru_RU");
@@ -29,8 +27,6 @@ namespace launcher
         {
             try
             {
-                string javaFolder = "";
-
                 RegistryKey javaInstalled = Registry.LocalMachine.OpenSubKey("SOFTWARE\\JavaSoft\\Java Runtime Environment\\");
 
                 if (javaInstalled != null)
@@ -41,7 +37,7 @@ namespace launcher
 
                     if (javaPath != null)
                     {
-                        javaFolder = javaPath.GetValue("JavaHome").ToString();
+                        string javaFolder = javaPath.GetValue("JavaHome").ToString();
 
                         javapath = javaFolder + "\\bin\\javaw.exe";
                     }

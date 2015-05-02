@@ -110,7 +110,7 @@ namespace launcher
 
         private void StartGameBtn_Click(object sender, EventArgs e)
         {
-            if (NickName != null && NickName != "")
+            if (!string.IsNullOrEmpty(NickName))
             {
                 if (GameChecked == true)
                 {
