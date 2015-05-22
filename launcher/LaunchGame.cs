@@ -85,6 +85,7 @@ namespace launcher
             {
                 Clipboard.SetText(sb.ToString());
             }
+            MessageBox.Show(javapath);
             try
             {
                 mc.Start();

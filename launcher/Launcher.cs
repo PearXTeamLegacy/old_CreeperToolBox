@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Net;
 using System.Text;
 using System.Threading;
@@ -110,6 +111,11 @@ namespace launcher
 
         private void StartGameBtn_Click(object sender, EventArgs e)
         {
+            SoundPlayer sp = new SoundPlayer(Properties.Resources.Meow);
+            if (NickName.Equals("cat")) sp.Play();
+            else if (NickName.Equals("Cat")) sp.Play();
+            else if (NickName.Equals("kot")) sp.Play();
+            else if (NickName.Equals("Kot")) sp.Play();
             if (!string.IsNullOrEmpty(NickName))
             {
                 if (GameChecked == true)
