@@ -22,7 +22,7 @@ namespace launcher
         private void Timer_Updater_Tick(object sender, EventArgs e)
         {
             Timer_Updater.Stop();
-            client.DownloadFileAsync(new Uri("http://pearx.ru/ctb/launcher.exe"), "new.launcher.exe");
+            client.DownloadFileAsync(new Uri("http://creepertoolbox.tk/ctb/launcher.exe"), "new.launcher.exe");
         }
 
         private void Updater_FormClosing(object sender, FormClosingEventArgs e)

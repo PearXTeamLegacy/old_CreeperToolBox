@@ -46,28 +46,28 @@ namespace launcher
                     File.Delete(Launcher.LauncherDataPath + "\\assets.zip");
                     StepText.Text = "Шаг 3/7: Скачивание ядра игры";
                     DownloadBar.Visible = true;
-                    client.DownloadFileAsync(new Uri("http://pearx.ru/ctb/client/game.jar"), Launcher.appdata + "\\" + Launcher.foldername + "\\bin\\game.jar");
+                    client.DownloadFileAsync(new Uri("http://creepertoolbox.tk/client/game.jar"), Launcher.appdata + "\\" + Launcher.foldername + "\\bin\\game.jar");
                 }
                 else if (step == 1)
                 {
                     step++;
                     StepText.Text = "Шаг 4/7: Скачивание MinecraftForge";
                     DownloadBar.Visible = true;
-                    client.DownloadFileAsync(new Uri("http://pearx.ru/ctb/client/forge.jar"), Launcher.appdata + "\\" + Launcher.foldername + "\\bin\\forge.jar");
+                    client.DownloadFileAsync(new Uri("http://creepertoolbox.tk/client/forge.jar"), Launcher.appdata + "\\" + Launcher.foldername + "\\bin\\forge.jar");
                 }
                 else if (step == 2)
                 {
                     step++;
                     StepText.Text = "Шаг 5/7: Скачивание библиотек игры";
                     DownloadBar.Visible = true;
-                    client.DownloadFileAsync(new Uri("http://pearx.ru/ctb/client/libs.jar"), Launcher.appdata + "\\" + Launcher.foldername + "\\bin\\libs.jar");
+                    client.DownloadFileAsync(new Uri("http://creepertoolbox.tk/client/libs.jar"), Launcher.appdata + "\\" + Launcher.foldername + "\\bin\\libs.jar");
                 }
                 else if (step == 3)
                 {
                     step++;
                     StepText.Text = "Шаг 6/7: Скачивание дополнительных файлов";
                     DownloadBar.Visible = true;
-                    client.DownloadFileAsync(new Uri("http://pearx.ru/ctb/client/other.zip"), Launcher.LauncherDataPath + "\\other.zip");
+                    client.DownloadFileAsync(new Uri("http://creepertoolbox.tk/client/other.zip"), Launcher.LauncherDataPath + "\\other.zip");
                 }
                 else if (step == 4)
                 {
@@ -79,11 +79,11 @@ namespace launcher
                     thr.Join();
                     StepText.Location = new Point(12, 9);
                     File.Delete(Launcher.LauncherDataPath + "\\other.zip");
-                    versions.assetsv = client.DownloadString("http://pearx.ru/ctb/client/assets.v");
-                    versions.libsv = client.DownloadString("http://pearx.ru/ctb/client/libs.v");
-                    versions.forgev = client.DownloadString("http://pearx.ru/ctb/client/forge.v");
-                    versions.gamev = client.DownloadString("http://pearx.ru/ctb/client/game.v");
-                    versions.otherv = client.DownloadString("http://pearx.ru/ctb/client/other.v");
+                    versions.assetsv = client.DownloadString("http://creepertoolbox.tk/client/assets.v");
+                    versions.libsv = client.DownloadString("http://creepertoolbox.tk/client/libs.v");
+                    versions.forgev = client.DownloadString("http://creepertoolbox.tk/client/forge.v");
+                    versions.gamev = client.DownloadString("http://creepertoolbox.tk/client/game.v");
+                    versions.otherv = client.DownloadString("http://creepertoolbox.tk/client/other.v");
                     StepText.Text = "Готово";
                     this.Close();
                     Program.l.CheckGame();
@@ -91,7 +91,7 @@ namespace launcher
             }
             else if(type == 2)
             {
-                versions.forgev = client.DownloadString("http://pearx.ru/ctb/client/forge.v");
+                versions.forgev = client.DownloadString("http://creepertoolbox.tk/client/forge.v");
                 StepText.Text = "Готово";
                 this.Close();
                 Program.l.CheckGame();
@@ -116,7 +116,7 @@ namespace launcher
                 if (File.Exists(Launcher.appdata + "\\" + Launcher.foldername + "\\bin\\forge.jar")) File.Delete(Launcher.appdata + "\\" + Launcher.foldername + "\\bin\\forge.jar");
                 if (Directory.Exists(Launcher.appdata + "\\" + Launcher.foldername + "\\assets")) Directory.Delete(Launcher.appdata + "\\" + Launcher.foldername + "\\assets", true);
                 if (Directory.Exists(Launcher.appdata + "\\" + Launcher.foldername + "\\bin\\natives")) Directory.Delete(Launcher.appdata + "\\" + Launcher.foldername + "\\bin\\natives", true);
-                client.DownloadFileAsync(new Uri("http://pearx.ru/ctb/client/assets.zip"), Launcher.LauncherDataPath + "\\assets.zip");
+                client.DownloadFileAsync(new Uri("http://creepertoolbox.tk/client/assets.zip"), Launcher.LauncherDataPath + "\\assets.zip");
                 UpdateTimer.Stop();
             }
             else if (type == 2)
@@ -124,7 +124,7 @@ namespace launcher
                 UpdateTimer.Stop();
                 if (File.Exists(Launcher.appdata + "\\" + Launcher.foldername + "\\bin\\forge.jar")) File.Delete(Launcher.appdata + "\\" + Launcher.foldername + "\\bin\\forge.jar");
                 StepText.Text = "Шаг 1/1: Обновление MinecraftForge";
-                client.DownloadFileAsync(new Uri("http://pearx.ru/ctb/client/forge.jar"), Launcher.appdata + "\\" + Launcher.foldername + "\\bin\\forge.jar");
+                client.DownloadFileAsync(new Uri("http://creepertoolbox.tk/client/forge.jar"), Launcher.appdata + "\\" + Launcher.foldername + "\\bin\\forge.jar");
             }
         }
 

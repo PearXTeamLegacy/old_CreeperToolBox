@@ -38,6 +38,7 @@ namespace launcher
             this.LauncherAds = new System.Windows.Forms.Label();
             this.updt = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.openSiteBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SettingsBtn
@@ -123,8 +124,20 @@ namespace launcher
             this.label1.Size = new System.Drawing.Size(346, 52);
             this.label1.TabIndex = 7;
             this.label1.Text = "ВНИМАНИЕ!\r\nЭто Alpha-версия Creeper ToolBox. В этой версии могут быть баги. \r\nО в" +
-    "сех найденных багах пишите разработчику на GitHub!\r\n(нажмите чтобы открыть)";
+    "сех найденных багах пишите на форум!\r\n(нажмите чтобы открыть)";
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // openSiteBtn
+            // 
+            this.openSiteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.openSiteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.openSiteBtn.Location = new System.Drawing.Point(277, 317);
+            this.openSiteBtn.Name = "openSiteBtn";
+            this.openSiteBtn.Size = new System.Drawing.Size(199, 42);
+            this.openSiteBtn.TabIndex = 8;
+            this.openSiteBtn.Text = "Сайт лаунчера";
+            this.openSiteBtn.UseVisualStyleBackColor = true;
+            this.openSiteBtn.Click += new System.EventHandler(this.openSiteBtn_Click);
             // 
             // Launcher
             // 
@@ -133,6 +146,7 @@ namespace launcher
             this.BackgroundImage = global::launcher.Properties.Resources.wallpaper;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(743, 466);
+            this.Controls.Add(this.openSiteBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LauncherAds);
             this.Controls.Add(this.ClearDirBtn);
@@ -162,6 +176,7 @@ namespace launcher
         private System.Windows.Forms.Label LauncherAds;
         private System.Windows.Forms.Timer updt;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button openSiteBtn;
     }
 }
 

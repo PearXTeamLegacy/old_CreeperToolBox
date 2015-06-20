@@ -46,7 +46,7 @@ namespace launcher
             try
             {
                 WebClient ads = new WebClient();
-                LauncherAds.Text = ads.DownloadString("http://pearx.ru/ctb/adtext");
+                LauncherAds.Text = ads.DownloadString("http://creepertoolbox.tk/ctb/adtext");
             }
             catch { }
             if (!Directory.Exists(LauncherDataPath)) Directory.CreateDirectory(LauncherDataPath);
@@ -121,7 +121,7 @@ namespace launcher
                 if (GameChecked == true)
                 {
                     WebClient client = new WebClient();
-                    string forgea = client.DownloadString("http://pearx.ru/ctb/client/forge.v");
+                    string forgea = client.DownloadString("http://creepertoolbox.tk/client/forge.v");
                     if (forgea != versions.forgev)
                     {
                         DialogResult result = MessageBox.Show("Обновить?", "Доступно обновление MinecraftForge", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -200,7 +200,7 @@ namespace launcher
             try
             {
                 WebClient ads = new WebClient();
-                Process.Start(ads.DownloadString("http://pearx.ru/ctb/adurl"));
+                Process.Start(ads.DownloadString("http://creepertoolbox.tk/ctb/adurl"));
             }
             catch { }
         }
@@ -211,7 +211,7 @@ namespace launcher
             WebClient updater = new WebClient();
             try
             {
-                string actual = updater.DownloadString("http://pearx.ru/ctb/version");
+                string actual = updater.DownloadString("http://creepertoolbox.tk/ctb/version");
                 if (actual != versions.v)
                 {
                     DialogResult result = MessageBox.Show("Обновить?", "Доступно обновление", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -235,7 +235,7 @@ namespace launcher
                 try
                 {
                     MessageBox.Show("Невозможно найти библиотеки Creeper ToolBox!\nБиблиотеки будут сейчас скачаны", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    client.DownloadFile("http://pearx.ru/ctb/Ionic.Zip.dll", "Ionic.Zip.dll");
+                    client.DownloadFile("http://creepertoolbox.tk/ctb/Ionic.Zip.dll", "Ionic.Zip.dll");
                 }
                 catch
                 {
@@ -248,7 +248,7 @@ namespace launcher
                 try
                 {
                     MessageBox.Show("Невозможно найти компонент обновления!\nОн будет сейчас скачан", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    client.DownloadFile("http://pearx.ru/ctb/updater.exe", "updater.exe");
+                    client.DownloadFile("http://creepertoolbox.tk/ctb/updater.exe", "updater.exe");
                 }
                 catch
                 {
@@ -260,7 +260,12 @@ namespace launcher
 
         private void label1_Click(object sender, EventArgs e)
         {
-            Process.Start("https://github.com/mrAppleXZ/CreeperToolBox/issues/new");
+            Process.Start("http://forum.pearx.ru/viewforum.php?f=8");
+        }
+
+        private void openSiteBtn_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://creepertoolbox.tk/");
         }
     }
 }

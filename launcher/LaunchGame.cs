@@ -67,6 +67,7 @@ namespace launcher
             sb.Append("--accessToken  123 ");
             sb.Append("--userProperties {} ");
             sb.Append("--userType legacy ");
+            sb.Append("--Doptifine.ForgeSplashCompatible true ");
             sb.Append("--tweakClass cpw.mods.fml.common.launcher.FMLTweaker ");
 
 
