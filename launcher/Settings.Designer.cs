@@ -47,6 +47,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.checkVerBox = new System.Windows.Forms.CheckBox();
+            this.checkMFVerBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.MemoryBar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -173,7 +175,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 210);
+            this.label9.Location = new System.Drawing.Point(12, 256);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(13, 65);
             this.label9.TabIndex = 12;
@@ -228,11 +230,35 @@
             this.label12.TabIndex = 17;
             this.label12.Text = "version";
             // 
+            // checkVerBox
+            // 
+            this.checkVerBox.AutoSize = true;
+            this.checkVerBox.Location = new System.Drawing.Point(12, 213);
+            this.checkVerBox.Name = "checkVerBox";
+            this.checkVerBox.Size = new System.Drawing.Size(193, 17);
+            this.checkVerBox.TabIndex = 18;
+            this.checkVerBox.Text = "Проверять обновления лаунчера";
+            this.checkVerBox.UseVisualStyleBackColor = true;
+            this.checkVerBox.CheckedChanged += new System.EventHandler(this.checkVerBox_CheckedChanged);
+            // 
+            // checkMFVerBox
+            // 
+            this.checkMFVerBox.AutoSize = true;
+            this.checkMFVerBox.Location = new System.Drawing.Point(12, 236);
+            this.checkMFVerBox.Name = "checkMFVerBox";
+            this.checkMFVerBox.Size = new System.Drawing.Size(222, 17);
+            this.checkMFVerBox.TabIndex = 19;
+            this.checkMFVerBox.Text = "Проверять обновления MineCraft Forge";
+            this.checkMFVerBox.UseVisualStyleBackColor = true;
+            this.checkMFVerBox.CheckedChanged += new System.EventHandler(this.checkMFVerBox_CheckedChanged);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(449, 284);
+            this.ClientSize = new System.Drawing.Size(449, 449);
+            this.Controls.Add(this.checkMFVerBox);
+            this.Controls.Add(this.checkVerBox);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -284,5 +310,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.CheckBox checkVerBox;
+        private System.Windows.Forms.CheckBox checkMFVerBox;
     }
 }

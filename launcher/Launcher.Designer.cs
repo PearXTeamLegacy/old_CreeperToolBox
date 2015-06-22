@@ -39,6 +39,7 @@ namespace launcher
             this.updt = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.openSiteBtn = new System.Windows.Forms.Button();
+            this.modsBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SettingsBtn
@@ -119,7 +120,7 @@ namespace launcher
             // 
             this.label1.AutoSize = true;
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Location = new System.Drawing.Point(12, 405);
+            this.label1.Location = new System.Drawing.Point(385, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(346, 52);
             this.label1.TabIndex = 7;
@@ -139,6 +140,18 @@ namespace launcher
             this.openSiteBtn.UseVisualStyleBackColor = true;
             this.openSiteBtn.Click += new System.EventHandler(this.openSiteBtn_Click);
             // 
+            // modsBtn
+            // 
+            this.modsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.modsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.modsBtn.Location = new System.Drawing.Point(277, 365);
+            this.modsBtn.Name = "modsBtn";
+            this.modsBtn.Size = new System.Drawing.Size(199, 42);
+            this.modsBtn.TabIndex = 9;
+            this.modsBtn.Text = "Моды";
+            this.modsBtn.UseVisualStyleBackColor = true;
+            this.modsBtn.Click += new System.EventHandler(this.modsBtn_Click);
+            // 
             // Launcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,6 +159,7 @@ namespace launcher
             this.BackgroundImage = global::launcher.Properties.Resources.wallpaper;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(743, 466);
+            this.Controls.Add(this.modsBtn);
             this.Controls.Add(this.openSiteBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LauncherAds);
@@ -177,6 +191,7 @@ namespace launcher
         private System.Windows.Forms.Timer updt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button openSiteBtn;
+        private System.Windows.Forms.Button modsBtn;
     }
 }
 

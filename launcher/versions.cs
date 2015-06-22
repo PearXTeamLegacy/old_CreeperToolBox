@@ -12,6 +12,6 @@ namespace launcher
         public static string forgev;
         public static string gamev;
         public static string otherv;
-        public static string v = "Alpha_1.0.4.0";
+        public static string v = "Alpha_1.0.4.1";
     }
 }

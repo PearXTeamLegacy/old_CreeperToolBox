@@ -27,6 +27,8 @@ namespace launcher
         public static bool ownStartString = false;
         public static string ownString;
         bool GameChecked;
+        public static bool checkVer = true;
+        public static bool checkMFVer = true;
 
 
         public Launcher()
@@ -62,6 +64,8 @@ namespace launcher
                 FullScreen = Convert.ToBoolean(s1[3]);
                 ownStartString = Convert.ToBoolean(s1[4]);
                 ownString = s1[5];
+                checkVer = Convert.ToBoolean(s1[6]);
+                checkMFVer = Convert.ToBoolean(s1[7]);
             }
             catch { }
             if (File.Exists(LauncherDataPath + "\\versions"))
@@ -93,7 +97,9 @@ namespace launcher
                 Memory.ToString(),
                 FullScreen.ToString(),
                 ownStartString.ToString(),
-                ownString
+                ownString,
+                checkVer.ToString(),
+                checkMFVer.ToString()
             });
             File.WriteAllLines(LauncherDataPath + "\\versions", new string[] { 
                 versions.assetsv,
@@ -118,18 +124,26 @@ namespace launcher
             else if (NickName.Equals("Kot")) sp.Play();
             if (!string.IsNullOrEmpty(NickName))
             {
-                if (GameChecked == true)
+                if (GameChecked)
                 {
-                    WebClient client = new WebClient();
-                    string forgea = client.DownloadString("http://creepertoolbox.tk/client/forge.v");
-                    if (forgea != versions.forgev)
+                    if (checkMFVer)
                     {
-                        DialogResult result = MessageBox.Show("Обновить?", "Доступно обновление MinecraftForge", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (result == DialogResult.Yes)
+                        WebClient client = new WebClient();
+                        string forgea = client.DownloadString("http://creepertoolbox.tk/client/forge.v");
+                        if (forgea != versions.forgev)
                         {
-                            Downloading d = new Downloading();
-                            d.type = 2;
-                            d.Show();
+                            DialogResult result = MessageBox.Show("Обновить?", "Доступно обновление MinecraftForge", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (result == DialogResult.Yes)
+                            {
+                                Downloading d = new Downloading();
+                                d.type = 2;
+                                d.Show();
+                            }
+                            else
+                            {
+                                LaunchGame lg = new LaunchGame();
+                                lg.StartGame();
+                            }
                         }
                         else
                         {
@@ -208,24 +222,28 @@ namespace launcher
         private void updt_Tick(object sender, EventArgs e)
         {
             updt.Stop();
-            WebClient updater = new WebClient();
-            try
+            if (checkVer)
             {
-                string actual = updater.DownloadString("http://creepertoolbox.tk/ctb/version");
-                if (actual != versions.v)
+                WebClient updater = new WebClient();
+                try
                 {
-                    DialogResult result = MessageBox.Show("Обновить?", "Доступно обновление", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
+                    string actual = updater.DownloadString("http://creepertoolbox.tk/ctb/version");
+                    if (actual != versions.v)
                     {
-                        Updater f2 = new Updater();
-                        f2.ShowDialog();
+                        DialogResult result = MessageBox.Show("Обновить?", "Доступно обновление", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
+                        {
+                            Updater f2 = new Updater();
+                            f2.ShowDialog();
+                        }
                     }
                 }
+                catch
+                {
+                    MessageBox.Show("Невозможно проверить обновления", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            catch
-            {
-                MessageBox.Show("Невозможно проверить обновления", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            
         }
         void CheckLibs()
         {
@@ -266,6 +284,13 @@ namespace launcher
         private void openSiteBtn_Click(object sender, EventArgs e)
         {
             Process.Start("http://creepertoolbox.tk/");
+        }
+
+        private void modsBtn_Click(object sender, EventArgs e)
+        {
+            Mods mds = new Mods();
+            mds.Owner = this;
+            mds.Show();
         }
     }
 }

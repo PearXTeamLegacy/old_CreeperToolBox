@@ -38,7 +38,7 @@ namespace launcher
 
         private void Settings_Load(object sender, EventArgs e)
         {
-            if (Launcher.FullScreen == true) FullScreenBox.Checked = true;
+            FullScreenBox.Checked = Launcher.FullScreen;
             MemoryBar.Value = (Launcher.Memory - 512) / 512;
             label9.Text = "Версия ресурсов - " + versions.assetsv + "\nВерсия ядра игры - " + versions.gamev + "\nВерсия библиотек - " + versions.libsv + "\nВерсия MinecraftForge - " + versions.forgev + "\nВыпуск прочих файлов - " + versions.otherv;
             label12.Text = "Creeper ToolBox " + versions.v;
@@ -48,6 +48,8 @@ namespace launcher
                 ownStartBox.Enabled = true;
             }
             ownStartBox.Text = Launcher.ownString;
+            checkVerBox.Checked = Launcher.checkVer;
+            checkMFVerBox.Checked = Launcher.checkMFVer;
         }
 
         private void FullScreenBox_CheckedChanged(object sender, EventArgs e)
@@ -92,6 +94,30 @@ namespace launcher
         private void ownStartBox_TextChanged(object sender, EventArgs e)
         {
             Launcher.ownString = ownStartBox.Text;
+        }
+
+        private void checkVerBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkVerBox.Checked)
+            {
+                Launcher.checkVer = true;
+            }
+            else
+            {
+                Launcher.checkVer = false;
+            }
+        }
+
+        private void checkMFVerBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkMFVerBox.Checked)
+            {
+                Launcher.checkMFVer = true;
+            }
+            else
+            {
+                Launcher.checkMFVer = false;
+            }
         }
     }
 }
